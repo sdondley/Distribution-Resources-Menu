@@ -1,0 +1,16 @@
+use Test;
+use lib '.';
+use Injector;
+use Distribution::Resources::Menu;
+use Distribution::Resources::Distribution;
+
+BEGIN {
+    bind dist(), :name<dist>;
+}
+
+my ResourceMenu $c is injected;
+say $c.resources;
+$c.build-menu;
+$c.execute-menu;
+
+done-testing;

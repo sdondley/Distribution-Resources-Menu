@@ -1,0 +1,17 @@
+use v6.d;
+use Test;
+
+use Injector;
+use Distribution::Resources::Menu;
+use Distribution::Resources::Distribution;
+
+BEGIN {
+    bind dist(), :name<dist>;
+}
+
+my ResourceMenu $c is injected;
+say $c.resources;
+is $c.resources, 'testing/test.txt', 'gets resources';
+$c.build-menu;
+
+done-testing;
