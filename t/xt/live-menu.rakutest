@@ -2,13 +2,14 @@
 use lib '.';
 use lib '../../github/Test-Output/lib';
 use Test;
-use Test::Output;
 use Distribution::Resources::Menu;
 use Distribution::Resources::Distribution;
 
 plan 1;
 
 when !%*ENV<AUTHOR_TESTING> { skip 'skipping author tests'  }
+
+use Test::Output;
 
 plan 3;
 
