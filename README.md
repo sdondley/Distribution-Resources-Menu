@@ -13,7 +13,7 @@ use Distribution::Resources::Menu;
 DESCRIPTION
 ===========
 
-Distribution::Resources::Menu is ...
+Distribution::Resources::Menu allows users to navigate and select a file from a distribution's `resources` directory.
 
 AUTHOR
 ======

@@ -1,17 +1,14 @@
 use v6.d;
 use Test;
-
-use Injector;
 use Distribution::Resources::Menu;
 use Distribution::Resources::Distribution;
 
-BEGIN {
-    bind dist(), :name<dist>;
-}
+my $c = ResourceMenu.new(distribution => dist(), resources => rsrc() );
 
-my ResourceMenu $c is injected;
-say $c.resources;
-is $c.resources, 'testing/test.txt', 'gets resources';
-$c.build-menu;
+$c.init;
+is $c.paths, 'testing/testing2/testing3/test.txt testing/testing2/testing3/test2.txt testing/testing2/tricky testing/testing5/test3.txt',
+        'gets resources';
+
+is $c.menu.^name, 'HashToMenu', 'sets menu attribute';
 
 done-testing;
