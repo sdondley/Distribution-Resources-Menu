@@ -3,8 +3,9 @@ use Test;
 use Distribution::Resources::Menu;
 use Distribution::Resources::Distribution;
 
-my $c = ResourceMenu.new(distribution => dist(), resources => rsrc() );
+plan 2;
 
+my $c = ResourceMenu.new(distribution => dist(), resources => rsrc() );
 $c.init;
 is $c.paths, 'testing/testing2/testing3/test.txt testing/testing2/testing3/test2.txt testing/testing2/tricky testing/testing5/test3.txt',
         'gets resources';

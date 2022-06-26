@@ -1,19 +1,63 @@
+[![Actions Status](https://github.com/sdondley/Distribution-Resources-Menu/actions/workflows/test.yml/badge.svg)](https://github.com/sdondley/Distribution-Resources-Menu/actions)
+
 NAME
 ====
 
-Distribution::Resources::Menu - blah blah blah
+Distribution::Resources::Menu - Navigate the files in the resources directory of your Raku distribution from the command line
 
 SYNOPSIS
 ========
 
+Place something like the following code into a module in your distribution:
+
 ```raku
+use Injector  # IMPORTANT
 use Distribution::Resources::Menu;
+unit module Your::Module;
+
+my $rsm = ResourceMenu.new(distribution => $?DISTRIBUTION, resources => $%RESOURCES);
+
+sub execute-the-menu-to-pick-a-file is export {
+    $rsm.execute;
+}
+```
+
+And now you can execute the menu with something like this:
+
+```raku
+use Your::Module;
+
+my $resource = execute-the-menu-to-pick-a-file();
+# This will display a menu on the command line and prompt the user
+# to select a file from the "resources" directory of the distribution
+
+say $resource.file-path;
+say $resource.file-content;
+my $content = $resource
 ```
 
 DESCRIPTION
 ===========
 
-Distribution::Resources::Menu allows users to navigate and select a file from a distribution's `resources` directory.
+Distribution::Resources::Menu generates and executes a menu for navigating and selecting files located in a distribution's `resources` directory.
+
+METHODS
+=======
+
+execute
+-------
+
+Executes the interactive command-line menu for selecting a file from the resources directory of the distribution.
+
+file-content
+------------
+
+Returns the string value of the content of the file.
+
+file-path
+---------
+
+Returns the string value of the path to the file contained in the `$%RESOURCES` variable.
 
 AUTHOR
 ======

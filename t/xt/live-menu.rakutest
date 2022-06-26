@@ -6,9 +6,11 @@ use Test::Output;
 use Distribution::Resources::Menu;
 use Distribution::Resources::Distribution;
 
-plan 2;
+plan 1;
 
 when !%*ENV<AUTHOR_TESTING> { skip 'skipping author tests'  }
+
+plan 3;
 
 my $c = ResourceMenu.new(distribution => dist(), resources => rsrc() );
 

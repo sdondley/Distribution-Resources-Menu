@@ -1,19 +1,17 @@
 {
-  "name": "Distribution::Resources::Menu",
-  "description": " Navigate the files in the resources directory of your Raku distribution from the command line",
-  "version": "0.0.1",
-  "perl": "6.d",
+  "auth": "zef:sdondley",
   "authors": [
     "Steve Dondley"
   ],
-  "auth": "zef:sdondley",
+  "build-depends": [
+  ],
   "depends": [
     "Menu::Simple"
   ],
-  "build-depends": [],
-  "test-depends": [
-    "Test::Output"
-  ],
+  "description": "Navigate the files in the resources directory",
+  "license": "Artistic-2.0",
+  "name": "Distribution::Resources::Menu",
+  "perl": "6.d",
   "provides": {
     "Distribution::Resources::Distribution": "lib/Distribution/Resources/Distribution.rakumod",
     "Distribution::Resources::Menu": "lib/Distribution/Resources/Menu.rakumod"
@@ -24,7 +22,11 @@
     "testing/testing5/test3.txt",
     "testing/testing2/tricky"
   ],
-  "license": "Artistic-2.0",
-  "tags": [],
-  "source-url": ""
+  "source-url": "https://github.com/sdondley/Distribution-Resources-Menu.git",
+  "tags": [
+  ],
+  "test-depends": [
+    "Test::Output"
+  ],
+  "version": "0.0.1"
 }
