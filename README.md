@@ -11,13 +11,14 @@ SYNOPSIS
 Place something like the following code into a module in your distribution:
 
 ```raku
-use Injector  # IMPORTANT
 use Distribution::Resources::Menu;
 unit module Your::Module;
 
-my $rsm = ResourceMenu.new(distribution => $?DISTRIBUTION, resources => $%RESOURCES);
+my $rsm = ResourceMenu.new(
+    distribution => $?DISTRIBUTION,
+    resources    => $%RESOURCES);
 
-sub execute-the-menu-to-pick-a-file is export {
+sub execute-resource-menu is export {
     $rsm.execute;
 }
 ```
@@ -27,13 +28,12 @@ And now you can execute the menu with something like this:
 ```raku
 use Your::Module;
 
-my $resource = execute-the-menu-to-pick-a-file();
-# This will display a menu on the command line and prompt the user
+# Display a menu on the command line and prompt the user
 # to select a file from the "resources" directory of the distribution
+my $resource = execute-resource-menu();
 
 say $resource.file-path;
 say $resource.file-content;
-my $content = $resource
 ```
 
 DESCRIPTION
