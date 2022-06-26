@@ -2,6 +2,7 @@
 use lib '.';
 use lib '../../github/Test-Output/lib';
 use Test;
+use Test::Output;
 use Distribution::Resources::Menu;
 use Distribution::Resources::Distribution;
 
@@ -12,7 +13,6 @@ when !%*ENV<AUTHOR_TESTING> { skip 'skipping author tests'  }
 
 plan 3;
 
-use Test::Output;
 my $c = ResourceMenu.new(distribution => dist(), resources => rsrc() );
 
 diag "\nAuthor Test Instructions: Keep hitting 1 <enter> to select expected file\n";
