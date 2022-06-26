@@ -1,6 +1,7 @@
 Revision history for Distribution-Resources-Menu
 
 {{$NEXT}}
+    - Doc clarity improvements and fixes
 
 0.0.2  2022-06-26T13:06:35-04:00
     - fix broken author test
