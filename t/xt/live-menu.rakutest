@@ -9,10 +9,10 @@ plan 1;
 
 when !%*ENV<AUTHOR_TESTING> { skip 'skipping author tests'  }
 
-use Test::Output;
 
 plan 3;
 
+use Test::Output;
 my $c = ResourceMenu.new(distribution => dist(), resources => rsrc() );
 
 diag "\nAuthor Test Instructions: Keep hitting 1 <enter> to select expected file\n";
@@ -20,5 +20,5 @@ my $rsrc = $c.execute;
 
 output-like { $rsrc.file-content.say }, /.*test ' ' file.*/, 'sets and gets file content';
 
-test-output-verbosity();
+#test-output-verbosity();
 like $rsrc.file-path, /.*testing\/testing2\/testing3\/test.txt/, 'sets and gets file path';
