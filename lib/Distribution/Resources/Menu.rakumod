@@ -17,7 +17,7 @@ class ResourceMenu is export {
         #my &processor = sub ($str) { flip $str };
         #self.menu = HashToMenu.new($hash, &action, &processor);
         #self.menu = HashToMenu.new($hash, &action);
-        self.menu = HashToMenu.new($hash, :strip-leading-number);
+        self.menu = HashToMenu.new($hash, :strip-sort-num;
     }
 
     method menu-populate() {
