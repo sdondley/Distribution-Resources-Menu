@@ -1,6 +1,8 @@
 Revision history for Distribution-Resources-Menu
 
 {{$NEXT}}
+
+0.0.4  2022-06-27T01:03:22-04:00
     - doc typo fix
     - fix bug preventing option numbers from getting stripped
 

@@ -16,7 +16,7 @@ unit module Your::Module;
 
 my $rsm = ResourceMenu.new(
     distribution => $?DISTRIBUTION,
-    resources    => $%RESOURCES);
+    resources    => %?RESOURCES);
 
 sub execute-resource-menu is export {
     $rsm.execute;
